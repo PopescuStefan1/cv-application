@@ -1,9 +1,14 @@
 import "../styles/CVDisplay.css";
 
-function CVDisplay({ userData }) {
+function CVDisplay({ userData, setEditState }) {
+    const handleEditButtonClick = (editType) => {
+        setEditState(editType);
+    };
+
     return (
         <div id="cv-container">
             <div id="header">
+                <button onClick={() => handleEditButtonClick("general-info-edit")}>Edit</button>
                 <h1>{userData.generalInfo?.name ?? ""}</h1>
                 <div id="contact-info">
                     <span>{userData.generalInfo?.email ?? ""}</span>
@@ -12,6 +17,7 @@ function CVDisplay({ userData }) {
                 </div>
             </div>
             <div id="work-experiences">
+                <button onClick={() => handleEditButtonClick("work-experience-edit")}>Edit</button>
                 <h2>Work Experience</h2>
                 <div className="separator"></div>
                 {userData.workExperience.map((item, index) => (
@@ -35,6 +41,7 @@ function CVDisplay({ userData }) {
                 ))}
             </div>
             <div id="education">
+                <button onClick={() => handleEditButtonClick("education-edit")}>Edit</button>
                 <h2>Education</h2>
                 <div className="separator"></div>
                 {userData.education.map((item, index) => (
