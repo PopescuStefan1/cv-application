@@ -3,12 +3,15 @@ import "../styles/EditForm.css";
 
 function WorkExperienceEditForm({ setWorkExperience }) {
     const [formData, setFormData] = useState({
-        degree: "",
-        field: "",
-        university: "",
+        company: "",
         location: "",
+        position: "",
+        startMonth: "",
         startYear: "",
+        endMonth: "",
         endYear: "",
+        isCurrentPos: false,
+        description: "",
     });
 
     const handleChange = (e) => {
@@ -16,6 +19,13 @@ function WorkExperienceEditForm({ setWorkExperience }) {
         setFormData({
             ...formData,
             [name]: value,
+        });
+    };
+
+    const handleCheckboxChange = () => {
+        setFormData({
+            ...formData,
+            isCurrentPos: !formData.isCurrentPos,
         });
     };
 
@@ -27,42 +37,14 @@ function WorkExperienceEditForm({ setWorkExperience }) {
     return (
         <form onSubmit={handleSubmit}>
             <div>
-                <label htmlFor="degree">Degree:</label>
+                <label htmlFor="company">Company:</label>
                 <br />
                 <input
                     type="text"
-                    id="degree"
-                    name="degree"
-                    placeholder="Bachelor's degree"
-                    value={formData.degree}
-                    onChange={handleChange}
-                    required
-                />
-                <br />
-            </div>
-            <div>
-                <label htmlFor="field">Field:</label>
-                <br />
-                <input
-                    type="text"
-                    id="field"
-                    name="field"
-                    placeholder="Computer Science"
-                    value={formData.field}
-                    onChange={handleChange}
-                    required
-                />
-                <br />
-            </div>
-            <div>
-                <label htmlFor="university">University:</label>
-                <br />
-                <input
-                    type="text"
-                    id="university"
-                    name="university"
-                    placeholder="University of Bucharest"
-                    value={formData.university}
+                    id="company"
+                    name="company"
+                    placeholder="Company 1"
+                    value={formData.company}
                     onChange={handleChange}
                     required
                 />
@@ -75,7 +57,7 @@ function WorkExperienceEditForm({ setWorkExperience }) {
                     type="text"
                     id="location"
                     name="location"
-                    placeholder="Romania"
+                    placeholder="United States"
                     value={formData.location}
                     onChange={handleChange}
                     required
@@ -83,35 +65,116 @@ function WorkExperienceEditForm({ setWorkExperience }) {
                 <br />
             </div>
             <div>
-                <label htmlFor="startYear">Start year:</label>
+                <label htmlFor="position">Position:</label>
                 <br />
                 <input
-                    type="number"
-                    min={1900}
-                    max={2030}
-                    id="startYear"
-                    name="startYear"
-                    placeholder="2024"
-                    value={formData.startYear}
+                    type="text"
+                    id="position"
+                    name="position"
+                    placeholder="Software Engineer"
+                    value={formData.position}
                     onChange={handleChange}
                     required
                 />
                 <br />
             </div>
             <div>
-                <label htmlFor="endYear">End year (real or expected):</label>
+                <label htmlFor="startDate">Start Date:</label>
                 <br />
+                <select id="startMonth" name="startMonth" value={formData.startMonth} onChange={handleChange} required>
+                    <option value="">Select Month</option>
+                    {[
+                        "January",
+                        "February",
+                        "March",
+                        "April",
+                        "May",
+                        "June",
+                        "July",
+                        "August",
+                        "September",
+                        "October",
+                        "November",
+                        "December",
+                    ].map((month, index) => (
+                        <option key={index} value={month}>
+                            {month}
+                        </option>
+                    ))}
+                </select>
                 <input
                     type="number"
-                    min={1900}
-                    max={2030}
-                    id="endYear"
-                    name="endYear"
-                    placeholder="2026"
-                    value={formData.endYear}
+                    id="startYear"
+                    name="startYear"
+                    placeholder="Year"
+                    value={formData.startYear}
                     onChange={handleChange}
                     required
+                    min="1900"
+                    max={new Date().getFullYear()}
                 />
+                <br />
+            </div>
+            {!formData.isCurrentPos && (
+                <div>
+                    <label htmlFor="endDate">End Date:</label>
+                    <br />
+                    <select id="endMonth" name="endMonth" value={formData.endMonth} onChange={handleChange} required>
+                        <option value="">Select Month</option>
+                        {[
+                            "January",
+                            "February",
+                            "March",
+                            "April",
+                            "May",
+                            "June",
+                            "July",
+                            "August",
+                            "September",
+                            "October",
+                            "November",
+                            "December",
+                        ].map((month, index) => (
+                            <option key={index} value={month}>
+                                {month}
+                            </option>
+                        ))}
+                    </select>
+                    <input
+                        type="number"
+                        id="endYear"
+                        name="endYear"
+                        placeholder="Year"
+                        value={formData.endYear}
+                        onChange={handleChange}
+                        required
+                        min="1900"
+                        max={new Date().getFullYear()}
+                    />
+                    <br />
+                </div>
+            )}
+            <div>
+                <label htmlFor="currentPos">Currently working in this position? </label>
+                <input
+                    type="checkbox"
+                    name="currentPos"
+                    id="currentPos"
+                    checked={formData.isCurrentPos}
+                    onChange={handleCheckboxChange}
+                />
+                <br />
+                <br />
+            </div>
+            <div>
+                <label htmlFor="description">Job description</label>
+                <br />
+                <textarea
+                    name="description"
+                    id="description"
+                    value={formData.description}
+                    onChange={handleChange}
+                ></textarea>
                 <br />
             </div>
             <button type="submit">Submit</button>

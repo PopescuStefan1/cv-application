@@ -25,8 +25,19 @@ function App() {
     };
 
     const setWorkExperience = (addedWorkExperience) => {
+        const updatedWorkExperience = {
+            company: addedWorkExperience.company,
+            location: addedWorkExperience.location,
+            position: addedWorkExperience.position,
+            startDate: addedWorkExperience.startMonth + addedWorkExperience.startYear,
+            endDate: addedWorkExperience.isCurrentPos
+                ? "Present"
+                : addedWorkExperience.endMonth + addedWorkExperience.endYear,
+            description: addedWorkExperience.description,
+        };
+
         setEditState(null);
-        setUserData({ ...userData, workExperience: [addedWorkExperience, ...userData.workExperience] });
+        setUserData({ ...userData, workExperience: [updatedWorkExperience, ...userData.workExperience] });
     };
 
     const removeWorkExperience = (index) => {
