@@ -1,14 +1,14 @@
 import { useState } from "react";
 import "../styles/EditForm.css";
 
-function EducationEditForm({ education, setEducation }) {
+function EducationEditForm({ setEducation }) {
     const [formData, setFormData] = useState({
-        degree: education.degree,
-        field: education.field,
-        university: education.university,
-        location: education.location,
-        startYear: education.startYear,
-        endYear: education.endYear,
+        degree: "",
+        field: "",
+        university: "",
+        location: "",
+        startYear: "",
+        endYear: "",
     });
 
     const handleChange = (e) => {
