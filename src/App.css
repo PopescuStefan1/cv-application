@@ -4,6 +4,8 @@ body {
     justify-content: center;
     width: 100%;
     margin: 4rem 0;
+    background-color: white;
+    color: black;
 }
 
 #container-grid {
@@ -13,5 +15,4 @@ body {
     width: 100%;
     align-items: center;
     justify-content: center;
-    color: black;
 }
