@@ -8,8 +8,10 @@ function CVDisplay({ userData, setEditState }) {
     return (
         <div id="cv-container">
             <div id="header">
-                <button onClick={() => handleEditButtonClick("general-info-edit")}>Edit</button>
-                <h1>{userData.generalInfo?.name ?? ""}</h1>
+                <div className="section-title-div">
+                    <h1>{userData.generalInfo?.name ?? ""}</h1>
+                    <button onClick={() => handleEditButtonClick("general-info-edit")}>Edit</button>
+                </div>
                 <div id="contact-info">
                     <span>{userData.generalInfo?.email ?? ""}</span>
                     <span>|</span>
@@ -17,8 +19,10 @@ function CVDisplay({ userData, setEditState }) {
                 </div>
             </div>
             <div id="work-experiences">
-                <button onClick={() => handleEditButtonClick("work-experience-edit")}>Edit</button>
-                <h2>Work Experience</h2>
+                <div className="section-title-div">
+                    <h2>Work Experience</h2>
+                    <button onClick={() => handleEditButtonClick("work-experience-edit")}>Edit</button>
+                </div>
                 <div className="separator"></div>
                 {userData.workExperience.map((item, index) => (
                     <div key={index}>
@@ -41,8 +45,10 @@ function CVDisplay({ userData, setEditState }) {
                 ))}
             </div>
             <div id="education">
-                <button onClick={() => handleEditButtonClick("education-edit")}>Edit</button>
-                <h2>Education</h2>
+                <div className="section-title-div">
+                    <h2>Education</h2>
+                    <button onClick={() => handleEditButtonClick("education-edit")}>Edit</button>
+                </div>
                 <div className="separator"></div>
                 {userData.education.map((item, index) => (
                     <div key={index}>

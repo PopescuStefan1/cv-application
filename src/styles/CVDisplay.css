@@ -57,3 +57,10 @@ h6 {
 .university-info {
     margin-bottom: 1rem;
 }
+
+.section-title-div {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+}
