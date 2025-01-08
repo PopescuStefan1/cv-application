@@ -8,8 +8,8 @@ function App() {
 
     return (
         <>
-            <h1>CV Maker</h1>
             <div id="container-grid">
+                <h1>CV Maker</h1>
                 <CVDisplay userData={userData}></CVDisplay>
                 <button className="edit-button">Edit</button>
                 <div id="education-display"></div>
