@@ -2,6 +2,10 @@
 
 A React-based web application that allows users to create, edit, and display their personalized CVs. This app is deployed on Netlify and allows users to input their personal information, work experience, and education details, which dynamically update the CV displayed.
 
+![image](https://github.com/user-attachments/assets/4dbfbf5a-646d-4c6a-be38-b5315680c2b2)
+
+![image](https://github.com/user-attachments/assets/45664524-4bf4-49a9-ae59-f8efa52f0465)
+
 [![Netlify Status](https://api.netlify.com/api/v1/badges/1b6b47d6-41a7-4165-a56a-92bec20799d2/deploy-status)](https://app.netlify.com/sites/stellar-caramel-ff4628/deploys)
 
 You can access the live app here: [CV Maker on Netlify](https://stellar-caramel-ff4628.netlify.app/)
