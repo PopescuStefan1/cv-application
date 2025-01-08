@@ -2,7 +2,7 @@
 
 A React-based web application that allows users to create, edit, and display their personalized CVs. This app is deployed on Netlify and allows users to input their personal information, work experience, and education details, which dynamically update the CV displayed.
 
-![image](https://github.com/user-attachments/assets/4dbfbf5a-646d-4c6a-be38-b5315680c2b2)
+![image](https://github.com/user-attachments/assets/f9462e00-7158-46d4-9900-915b660bb32d)
 
 ![image](https://github.com/user-attachments/assets/45664524-4bf4-49a9-ae59-f8efa52f0465)
 
