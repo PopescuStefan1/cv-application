@@ -83,24 +83,13 @@ function WorkExperienceEditForm({ setWorkExperience }) {
                 <br />
                 <select id="startMonth" name="startMonth" value={formData.startMonth} onChange={handleChange} required>
                     <option value="">Select Month</option>
-                    {[
-                        "January",
-                        "February",
-                        "March",
-                        "April",
-                        "May",
-                        "June",
-                        "July",
-                        "August",
-                        "September",
-                        "October",
-                        "November",
-                        "December",
-                    ].map((month, index) => (
-                        <option key={index} value={month}>
-                            {month}
-                        </option>
-                    ))}
+                    {["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"].map(
+                        (month, index) => (
+                            <option key={index} value={month}>
+                                {month}
+                            </option>
+                        )
+                    )}
                 </select>
                 <input
                     type="number"
@@ -121,24 +110,13 @@ function WorkExperienceEditForm({ setWorkExperience }) {
                     <br />
                     <select id="endMonth" name="endMonth" value={formData.endMonth} onChange={handleChange} required>
                         <option value="">Select Month</option>
-                        {[
-                            "January",
-                            "February",
-                            "March",
-                            "April",
-                            "May",
-                            "June",
-                            "July",
-                            "August",
-                            "September",
-                            "October",
-                            "November",
-                            "December",
-                        ].map((month, index) => (
-                            <option key={index} value={month}>
-                                {month}
-                            </option>
-                        ))}
+                        {["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"].map(
+                            (month, index) => (
+                                <option key={index} value={month}>
+                                    {month}
+                                </option>
+                            )
+                        )}
                     </select>
                     <input
                         type="number"
