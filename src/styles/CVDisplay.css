@@ -58,9 +58,15 @@ h6 {
     margin-bottom: 1rem;
 }
 
-.section-title-div {
+.section-title-div,
+.removable-section-div {
     display: flex;
     width: 100%;
     justify-content: space-between;
     align-items: center;
+}
+
+.removable-section-div button {
+    background-color: red;
+    color: white;
 }

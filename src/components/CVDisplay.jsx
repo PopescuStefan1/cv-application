@@ -1,6 +1,6 @@
 import "../styles/CVDisplay.css";
 
-function CVDisplay({ userData, setEditState }) {
+function CVDisplay({ userData, setEditState, removeEducation }) {
     const handleEditButtonClick = (editType) => {
         setEditState(editType);
     };
@@ -47,17 +47,20 @@ function CVDisplay({ userData, setEditState }) {
             <div id="education">
                 <div className="section-title-div">
                     <h2>Education</h2>
-                    <button onClick={() => handleEditButtonClick("education-edit")}>Edit</button>
+                    <button onClick={() => handleEditButtonClick("education-edit")}>Add</button>
                 </div>
                 <div className="separator"></div>
                 {userData.education.map((item, index) => (
-                    <div key={index}>
-                        <div className="education-info">
-                            {item.degree} in {item.field}, {item.startYear} - {item.endYear}
+                    <div className="removable-section-div">
+                        <div key={index}>
+                            <div className="education-info">
+                                {item.degree} in {item.field}, {item.startYear} - {item.endYear}
+                            </div>
+                            <div className="university-info">
+                                {item.university}, {item.location}
+                            </div>
                         </div>
-                        <div className="university-info">
-                            {item.university}, {item.location}
-                        </div>
+                        <button onClick={() => removeEducation(index)}>Remove</button>
                     </div>
                 ))}
             </div>

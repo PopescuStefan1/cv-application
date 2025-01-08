@@ -28,11 +28,19 @@ function App() {
         setUserData({ ...userData, education: updatedEducation });
     };
 
+    const removeEducation = (index) => {
+        const updatedEducation = [...userData.education];
+        updatedEducation.splice(index, 1);
+        setUserData({ ...userData, education: updatedEducation });
+    };
+
     return (
         <>
             <div id="container-grid">
                 <h1>{title}</h1>
-                {editState === null && <CVDisplay userData={userData} setEditState={setEditState} />}
+                {editState === null && (
+                    <CVDisplay userData={userData} setEditState={setEditState} removeEducation={removeEducation} />
+                )}
                 {editState === "general-info-edit" && (
                     <GeneralInfoEditForm generalInfo={userData.generalInfo} setGeneralInfo={setGeneralInfo} />
                 )}
