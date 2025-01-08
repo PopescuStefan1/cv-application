@@ -6,7 +6,7 @@ const mockUserData = {
     },
     education: [
         {
-            type: "Master's degree",
+            degree: "Master's degree",
             field: "Security and Applied Logic",
             university: "University of Bucharest",
             location: "Romania",
@@ -14,7 +14,7 @@ const mockUserData = {
             endYear: "2026",
         },
         {
-            type: "Bachelor's degree",
+            degree: "Bachelor's degree",
             field: "Electrical Engineering and Computer Science",
             university: "Transylvania University of Brasov",
             location: "Romania",

@@ -53,7 +53,7 @@ function CVDisplay({ userData, setEditState }) {
                 {userData.education.map((item, index) => (
                     <div key={index}>
                         <div className="education-info">
-                            {item.type} in {item.field}, {item.startYear} - {item.endYear}
+                            {item.degree} in {item.field}, {item.startYear} - {item.endYear}
                         </div>
                         <div className="university-info">
                             {item.university}, {item.location}

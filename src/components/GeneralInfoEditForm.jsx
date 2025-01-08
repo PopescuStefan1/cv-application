@@ -1,5 +1,5 @@
 import { useState } from "react";
-import "../styles/GeneralInfoEditForm.css";
+import "../styles/EditForm.css";
 
 function GeneralInfoEditForm({ generalInfo, setGeneralInfo }) {
     const [formData, setFormData] = useState({

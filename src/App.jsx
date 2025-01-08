@@ -3,6 +3,7 @@ import "./App.css";
 import CVDisplay from "./components/CVDisplay";
 import mockUserData from "./assets/mockUserData";
 import GeneralInfoEditForm from "./components/GeneralInfoEditForm";
+import EducationEditForm from "./components/EducationEditForm";
 
 function App() {
     const [userData, setUserData] = useState(mockUserData);
@@ -22,6 +23,11 @@ function App() {
         setUserData({ ...userData, generalInfo: updatedGeneralInfo });
     };
 
+    const setEducation = (updatedEducation) => {
+        setEditState(null);
+        setUserData({ ...userData, education: updatedEducation });
+    };
+
     return (
         <>
             <div id="container-grid">
@@ -29,6 +35,9 @@ function App() {
                 {editState === null && <CVDisplay userData={userData} setEditState={setEditState} />}
                 {editState === "general-info-edit" && (
                     <GeneralInfoEditForm generalInfo={userData.generalInfo} setGeneralInfo={setGeneralInfo} />
+                )}
+                {editState === "education-edit" && (
+                    <EducationEditForm education={userData.education} setEducation={setEducation} />
                 )}
             </div>
         </>
