@@ -22,7 +22,7 @@ function App() {
             <div id="container-grid">
                 <h1>{title}</h1>
                 {editState === null && <CVDisplay userData={userData} setEditState={setEditState} />}
-                {editState === "general-info-edit" && <GeneralInfoEditForm />}
+                {editState === "general-info-edit" && <GeneralInfoEditForm generalInfo={userData.generalInfo} />}
             </div>
         </>
     );
