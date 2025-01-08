@@ -17,12 +17,19 @@ function App() {
             ? "Edit Education"
             : "CV Maker";
 
+    const setGeneralInfo = (updatedGeneralInfo) => {
+        setEditState(null);
+        setUserData({ ...userData, generalInfo: updatedGeneralInfo });
+    };
+
     return (
         <>
             <div id="container-grid">
                 <h1>{title}</h1>
                 {editState === null && <CVDisplay userData={userData} setEditState={setEditState} />}
-                {editState === "general-info-edit" && <GeneralInfoEditForm generalInfo={userData.generalInfo} />}
+                {editState === "general-info-edit" && (
+                    <GeneralInfoEditForm generalInfo={userData.generalInfo} setGeneralInfo={setGeneralInfo} />
+                )}
             </div>
         </>
     );
