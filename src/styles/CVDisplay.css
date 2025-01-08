@@ -1,0 +1,59 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0;
+    padding: 0;
+}
+
+#cv-container {
+    background-color: white;
+    border: 1px solid black;
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    width: 1000px;
+}
+
+#contact-info {
+    display: flex;
+    gap: 1rem;
+}
+
+.separator {
+    height: 1px;
+    width: 100%;
+    background-color: black;
+    margin: 0.5rem 0 0.5rem;
+}
+
+#header h1 {
+    margin-bottom: 1rem;
+}
+
+.work-info,
+.education-info {
+    font-weight: bold;
+    font-size: large;
+    display: flex;
+    gap: 0.5rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.work-description {
+    white-space: "pre-line";
+}
+
+.university-info {
+    font-weight: bold;
+}
+
+.work-description,
+.university-info {
+    margin-bottom: 1rem;
+}
