@@ -4,7 +4,7 @@ A React-based web application that allows users to create, edit, and display the
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/1b6b47d6-41a7-4165-a56a-92bec20799d2/deploy-status)](https://app.netlify.com/sites/stellar-caramel-ff4628/deploys)
 
-[Live site](https://stellar-caramel-ff4628.netlify.app/)
+You can access the live app here: [CV Maker on Netlify](https://stellar-caramel-ff4628.netlify.app/)
 
 ## Features
 1. **Personal Information:** In this section, the user can edit their name and contact information (email & phone number).
