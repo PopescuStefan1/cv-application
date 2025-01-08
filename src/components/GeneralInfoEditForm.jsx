@@ -33,6 +33,7 @@ function GeneralInfoEditForm({ generalInfo, setGeneralInfo }) {
                     placeholder="John Smith"
                     value={formData.name}
                     onChange={handleChange}
+                    required
                 />
                 <br />
             </div>
@@ -46,6 +47,7 @@ function GeneralInfoEditForm({ generalInfo, setGeneralInfo }) {
                     placeholder="email@example.com"
                     value={formData.email}
                     onChange={handleChange}
+                    required
                 />
                 <br />
             </div>
@@ -59,6 +61,7 @@ function GeneralInfoEditForm({ generalInfo, setGeneralInfo }) {
                     placeholder="+40723456789"
                     value={formData.phoneNumber}
                     onChange={handleChange}
+                    required
                 />
                 <br />
             </div>
