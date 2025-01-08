@@ -1,6 +1,6 @@
 import "../styles/CVDisplay.css";
 
-function CVDisplay({ userData, setEditState, removeEducation }) {
+function CVDisplay({ userData, setEditState, removeWorkExperience, removeEducation }) {
     const handleEditButtonClick = (editType) => {
         setEditState(editType);
     };
@@ -26,16 +26,19 @@ function CVDisplay({ userData, setEditState, removeEducation }) {
                 <div className="separator"></div>
                 {userData.workExperience.map((item, index) => (
                     <div key={index}>
-                        <div className="work-info">
-                            <div>
-                                {item.company}, {item.location}
+                        <div className="removable-section-div">
+                            <div className="work-info">
+                                <div>
+                                    {item.company}, {item.location}
+                                </div>
+                                <div>|</div>
+                                <div>{item.position}</div>
+                                <div>|</div>
+                                <div>
+                                    {item.startDate} - {item.endDate}
+                                </div>
                             </div>
-                            <div>|</div>
-                            <div>{item.position}</div>
-                            <div>|</div>
-                            <div>
-                                {item.startDate} - {item.endDate}
-                            </div>
+                            <button onClick={() => removeWorkExperience(index)}>Remove</button>
                         </div>
                         <div
                             className="work-description"

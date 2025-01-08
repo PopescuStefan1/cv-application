@@ -4,6 +4,7 @@ import CVDisplay from "./components/CVDisplay";
 import mockUserData from "./assets/mockUserData";
 import GeneralInfoEditForm from "./components/GeneralInfoEditForm";
 import EducationEditForm from "./components/EducationEditForm";
+import WorkExperienceEditForm from "./components/WorkExperienceEditForm";
 
 function App() {
     const [userData, setUserData] = useState(mockUserData);
@@ -23,9 +24,20 @@ function App() {
         setUserData({ ...userData, generalInfo: updatedGeneralInfo });
     };
 
-    const setEducation = (updatedEducation) => {
+    const setWorkExperience = (addedWorkExperience) => {
         setEditState(null);
-        setUserData({ ...userData, education: [updatedEducation, ...userData.education] });
+        setUserData({ ...userData, workExperience: [addedWorkExperience, ...userData.workExperience] });
+    };
+
+    const removeWorkExperience = (index) => {
+        const updatedWorkExperience = [...userData.workExperience];
+        updatedWorkExperience.splice(index, 1);
+        setUserData({ ...userData, workExperience: updatedWorkExperience });
+    };
+
+    const setEducation = (addedEducation) => {
+        setEditState(null);
+        setUserData({ ...userData, education: [addedEducation, ...userData.education] });
     };
 
     const removeEducation = (index) => {
@@ -39,14 +51,20 @@ function App() {
             <div id="container-grid">
                 <h1>{title}</h1>
                 {editState === null && (
-                    <CVDisplay userData={userData} setEditState={setEditState} removeEducation={removeEducation} />
+                    <CVDisplay
+                        userData={userData}
+                        setEditState={setEditState}
+                        removeWorkExperience={removeWorkExperience}
+                        removeEducation={removeEducation}
+                    />
                 )}
                 {editState === "general-info-edit" && (
                     <GeneralInfoEditForm generalInfo={userData.generalInfo} setGeneralInfo={setGeneralInfo} />
                 )}
-                {editState === "education-edit" && (
-                    <EducationEditForm education={userData.education} setEducation={setEducation} />
+                {editState === "work-experience-edit" && (
+                    <WorkExperienceEditForm setWorkExperience={setWorkExperience} />
                 )}
+                {editState === "education-edit" && <EducationEditForm setEducation={setEducation} />}
             </div>
         </>
     );
