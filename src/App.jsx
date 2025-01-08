@@ -25,7 +25,7 @@ function App() {
 
     const setEducation = (updatedEducation) => {
         setEditState(null);
-        setUserData({ ...userData, education: [...userData.education, updatedEducation] });
+        setUserData({ ...userData, education: [updatedEducation, ...userData.education] });
     };
 
     const removeEducation = (index) => {
