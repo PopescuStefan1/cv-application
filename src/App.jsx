@@ -29,10 +29,10 @@ function App() {
             company: addedWorkExperience.company,
             location: addedWorkExperience.location,
             position: addedWorkExperience.position,
-            startDate: addedWorkExperience.startMonth + addedWorkExperience.startYear,
+            startDate: `${addedWorkExperience.startMonth} ${addedWorkExperience.startYear}`,
             endDate: addedWorkExperience.isCurrentPos
                 ? "Present"
-                : addedWorkExperience.endMonth + addedWorkExperience.endYear,
+                : `${addedWorkExperience.endMonth} ${addedWorkExperience.endYear}`,
             description: addedWorkExperience.description,
         };
 
